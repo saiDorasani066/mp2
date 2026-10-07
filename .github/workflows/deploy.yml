@@ -37,12 +37,14 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - run: cp dist/index.html dist/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Vite's build output dir (CRA used ./build)
           path: ./dist
-  
+
   deploy:
     needs: build
 
@@ -51,7 +53,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4

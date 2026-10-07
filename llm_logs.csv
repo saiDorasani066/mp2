@@ -1,0 +1,559 @@
+[https://chatgpt.com/share/6ac5c671-6138-83ea-a646-321da66426a7](https://chatgpt.com/share/6ac5c671-6138-83ea-a646-321da66426a7)
+
+
+ok how do I submit: Skip to content
+saiDorasani066
+mp2
+Repository navigation
+Code
+Issues
+Pull requests
+Agents
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Settings
+saiDorasani066
+mp2
+Public
+Go to file
+t
+T
+saiDorasani066
+saiDorasani066
+Initial commit
+11ac7b4
+ · 
+last week
+Name		
+.github/workflows
+Initial commit
+last week
+README.md
+Initial commit
+last week
+Repository files navigation
+README
+MP 2: Front-end App
+Due: Tuesday, Oct 6, 2026, 11:59PM CT
+Table of Contents
+Assignment
+Grading Breakdown
+Tips
+Rules
+Getting Started
+Submission Details
+Assignment
+Task
+In this programming assignment, you will implement a front-end interface using React that consumes an API. Please read through the entire MP before you start.
+
+Requirements
+Create a single-page React app that lets users interact with the data from one of the following APIs.
+
+TMDB
+Pokemon
+NASA
+Marvel
+Jelly Belly Wiki
+The Meal DB
+Art Institute of Chicago
+More APIs if you want to explore here (please keep it class appropriate) 🫵🤨📸.
+Note that you may need to create an account and/or acquire an API key for some of the APIs. GitHub won’t restrict you from pushing API keys, but may send an email to say some keys are exposed. Because of this, please don't use any paid APIs.
+
+The API you are working with may become temporarily unavailable. If/when this happens, it doesn't mean you are blocked from working on the MP. You can mock the data, i.e. create a local hard coded response and use that instead of making the request.
+
+You may need to deal with APIs having rate-limiting policies. You can find ways to get around them like caching the results of large and common API calls
+
+These are also good opportunities to think about how your app should handle errors.
+
+Your app should have the following features:
+
+A list view: where users can input a query into a search bar and the app returns a list of results that match the query (i.e. searching movies or pokemon). There should also be a way to sort the search results based on different properties of the results (such as the name or rank) and of specifying an ordering (ascending and descending). Also, the search bar should filter as you type. You can sort and filter in the client side.
+A gallery view: that displays some kind of image media from the chosen API (gallery of movie posters). The gallery view should also have some kind filtering attribute where users can select one or many attributes and filter the gallery by them (i.e. genres of films or music).
+A detail view: When an item in the search view or the gallery view is clicked, the app should display the different attributes of the selected item. Also, this view should have previous and next buttons (can be implemented with arrows) that lets the user cycle through the list of objects. A detail view should have a specific route when navigated to. Basically, a user should be able to access the detail route through a specific url.
+Here's an old example that fulfills these requirements: https://www.youtube.com/watch?v=DmDZuAr7QJE
+
+You will also be required to use following tools:
+
+Use React Router for routing.
+Use Axios for API calls.
+Use TypeScript.
+Grading Breakdown
+Total Points : 100
+
+List View:
+
+Does the list view display relevant items from the chosen API ? (4 points)
+Does the search bar filter down items based on the search? (8 points)
+Can you sort by at least 2 properties? (8 points)
+Can the properties be sorted in Ascending and Descending order? (8 points)
+Gallery View:
+
+Is the gallery composed of item media? (4 points)
+Does clicking on a filter change results accordingly? (8 points)
+Details View:
+
+Does clicking on an item in List View take you to the Details View? (10 points)
+Does clicking on an item in Gallery View take you to the Details View? (10 points)
+Does the Details View contain item details? (8 points)
+Do the PREVIOUS and NEXT buttons work correctly? (10 points)
+Other:
+
+Does the implementation use React Router and TypeScript? (12 points)
+Design (10 points)
+Tips
+Start early! This is first MP that uses React so start ahead.
+Visit https://reactjs.org/docs/faq-structure.html for examples on how to structure your React files.
+You may use a React component library for this MP.
+We recommend using Normalize.css.
+We recommend using CSS Modules, which Vite supports out of the box via *.module.css.
+Rules
+This is an individual assignment. No collaboration is permitted.
+It is not permitted to copy/paste code that is not your own. You are, however, free to look at different code sources for inspiration and clarity. All sources (code as well as reading material) that you reference to complete this assignment must be declared in the submission.
+There should be no use of inline styling.
+No inline script tags should be used.
+HTML tables cannot be used for layout.
+If you think something you’re doing might not be acceptable, please ask on Piazza.
+We strongly recommend using Vite to get your MP started. If you ignore this, we will not help with any environment issues.
+Getting Started
+Use Vite (see below) to generate your MP starter code, then run npm install.
+After running npm run dev open a browser and go to http://localhost:5173/ to view your page.
+Open up src/App.tsx to start building your first component. Visit https://react.dev/learn for many official, high quality resources to help get you started.
+Vite
+Vite generates a React starter project that requires no immediate configuration, and is one of the tools React officially recommends now that Create React App is deprecated. Use the react-ts template:
+
+npm create vite@latest . -- --template react-ts
+If Vite does not install dependencies for you, run npm install afterwards. The dev server is npm run dev (not npm start), and a production build goes to dist/ (not build/).
+
+Submission Details
+Here's what you will need to submit:
+
+On the class repo, click Use this template > Create a new repository. Name it mp2 and make it public (GitHub Pages requires a public repo on a free account). Then clone it: git clone git@github.com:<your-github-username>/mp2.git
+cd mp2, then scaffold a Vite + React + TypeScript project in place:
+npm create vite@latest . -- --template react-ts
+The directory already has README.md and .github/, so Vite will ask how to proceed. Choose "Ignore files and continue". (Do NOT choose "Remove existing files" -- that deletes the deploy workflow.)
+Note: Vite's template will overwrite README.md. Please pay attention to this and use an appropriate method to restore it if needed.
+Install dependencies:
+npm install
+This also creates package-lock.json. Commit it -- the deploy workflow runs npm ci, which fails without a lockfile.
+Set base in vite.config.ts so the deployed site can find its assets:
+export default defineConfig({
+  plugins: [react()],
+  base: '/<your-github-repo-name>/',   // e.g. '/mp2/' -- must match the repo name
+})
+Getting this wrong produces a blank page with 404s on your JS/CSS, not a build error.
+In your BrowserRouter or Router component, set the basename to match:
+<BrowserRouter basename={import.meta.env.BASE_URL}>
+  ...
+</BrowserRouter>
+Note: Should use <Link/> component instead of <a> to have the same basename.
+Set GitHub Pages Deployment Source to Github Actions
+In your Github repo, go to Settings > Pages > Build and Deployment > Source > Select "GitHub Actions"
+Commit and push your local changes to this new repository.
+git add . # "." adds all changed files, can also add specific files too
+git commit -m "[my-commit-message]" # message should be clear and meaningful
+git branch -M main
+git push origin main
+.github/workflows/deploy.yml file automatically makes a GitHub CI pipeline run to deploy your code. After the pipeline finishes, your site should be live at https://<your-github-username>.github.io/mp2. It should take around 1 minute.
+Make a video (3 minutes max) demo-ing your deployed website and upload it to Google Drive. Share it with uiuc.web.programming@gmail.com and put the share link in the submission form.
+Show the url to prove you are on your deployed website. Then show all the requirement features you fulfilled in your mp.
+If you were unable to deploy your website, you can demo your mp locally for some point deduction (hard capped at 80%)
+Just make sure you do git status and git log first so we can see your last edits.
+Fill out and submit the form here.
+Large Language Model (LLM) Usage Policy
+We acknowledge the transformative potential of LLMs in generating code; however, we are still in the nascent stages of understanding how to embed LLMs in developer workflows to write code more efficiently while maintaining quality. Therefore, we will not be teaching students directly how to use LLMs to develop web applications.
+
+As part of this class, we do encourage students to experiment with LLM services such as OpenAI's ChatGPT to generate source code for MPs. If LLMs are used to generate code for an MP, students must (1) submit their chatlogs along with their source code, and (2) answer survey questions related to their experience using LLMs in the grading form. Failure to do this will be a violation of the academic integrity policy of this course.
+
+About
+
+No description, website, or topics provided.
+Resources
+Readme
+Activity
+Stars
+0 stars
+Watchers
+0 watching
+Forks
+0 forks
+Releases
+No releases published
+Create a new release
+Packages
+No packages published
+Publish your first package
+Contributors
+1
+ (1)
+@saiDorasani066
+saiDorasani066
+Generated from cs409-fa25/mp2
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+…
+Yes. Based on the README you pasted, here’s the submission process in order.
+
+1. Before pushing, check these two deployment settings
+In vite.config.ts:
+
+export default defineConfig({
+  plugins: [react()],
+  base: "/mp2/",
+});
+
+In App.tsx:
+
+<BrowserRouter basename={import.meta.env.BASE_URL}>
+
+Since your repo is named mp2, /mp2/ is correct.
+
+Also make sure you use React Router <Link> rather than <a> for internal pages.
+
+2. Important: your Last.fm API key
+Your code currently uses:
+
+import.meta.env.VITE_LASTFM_API_KEY
+
+If your .env file is in .gitignore, GitHub Actions will not have that key, so the deployed site may load but API calls will fail.
+
+You need to deal with that before deploying. The clean option is to add VITE_LASTFM_API_KEY as a GitHub repository secret and expose it during the Vite build. If you show me your .github/workflows/deploy.yml, I can tell you the exact 1–2 lines to add.
+
+Do this before relying on the deployed site.
+
+3. Make sure the project builds locally
+Run:
+
+npm run build
+
+You want this to finish without TypeScript/build errors.
+
+Then optionally:
+
+npm run dev
+
+and quickly test:
+
+List search works
+Filter works
+Sort property 1 works ascending/descending
+Sort property 2 works ascending/descending
+Gallery images appear
+Gallery filters work
+List → Detail works
+Gallery → Detail works
+Prev/Next works
+Refreshing a detail URL still loads the detail
+4. Commit everything
+From the project folder:
+
+git status
+
+Then:
+
+git add .
+
+Then:
+
+git commit -m "Complete MP2"
+
+Then:
+
+git push origin main
+
+You probably do not need:
+
+git branch -M main
+
+again if your branch is already main.
+
+5. Enable GitHub Pages
+On GitHub:
+
+Repository → Settings → Pages
+
+Under Build and deployment:
+
+Source: GitHub Actions
+Your repo already has:
+
+.github/workflows/
+from the template, so that workflow should handle deployment.
+
+6. Watch the deployment
+Go to:
+
+Repository → Actions
+
+You should see a workflow running.
+
+Wait for it to get a green checkmark.
+
+Then your site should be approximately:
+
+https://saiDorasani066.github.io/mp2/
+Open that URL and test the deployed version, not just localhost.
+
+This is especially important for your routing and API key.
+
+7. Record your demo
+The README says 3 minutes maximum.
+
+Make sure the video visibly shows your deployed GitHub Pages URL, then demonstrate:
+
+List View
+
+type in search
+show filtering as you type
+change filter
+sort by property 1
+ascending/descending
+sort by property 2
+ascending/descending
+click an item → Detail
+Gallery View
+
+show images
+click several genre/filter buttons
+click an item → Detail
+Detail View
+
+show album details
+show specific URL
+click Previous
+click Next
+Keep moving; 3 minutes is short.
+
+8. Upload the video
+Upload it to Google Drive.
+
+Share it with:
+
+uiuc.web.programming@gmail.com
+Then copy the Drive share link.
+
+9. Submit the form
+In the README, click:
+
+Fill out and submit the form here.
+
+You will need the relevant links, likely including:
+
+GitHub repository
+deployed GitHub Pages site
+Google Drive demo video
+LLM disclosure/questions
+10. Don't forget the ChatGPT requirement
+Because you used ChatGPT for this MP, the policy you pasted says you must submit your chatlogs along with your source code and answer the LLM survey questions in the grading form.
+
+So do not skip that part—it is explicitly tied to the course academic-integrity policy.
+
+Your immediate next step
+Before pushing anything, run:
+
+npm run build
+
+If that succeeds, the API-key-on-GitHub-Actions issue is the next thing I would check before deployment.
+
+
+1 selection
+how do I check if its not tehre how do I add it # Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+…
+Your .gitignore currently does not ignore .env.
+
+This line:
+
+*.local
+does not cover .env.
+
+Add this near node_modules:
+
+node_modules
+.env
+dist
+dist-ssr
+*.local
+Then run:
+
+git status
+
+If .env does not appear under files to be committed, you're good.
+
+If you had already committed .env earlier, .gitignore alone won't remove it from Git tracking. Run:
+
+git rm --cached .env
+
+then:
+
+git status
+
+But GitHub Pages still needs the key
+Since .env will stay only on your computer, add the key to GitHub:
+
+GitHub repo → Settings → Secrets and variables → Actions → New repository secret
+
+Name:
+
+VITE_LASTFM_API_KEY
+Value:
+
+your Last.fm API key
+Then your deploy workflow needs to give that secret to Vite during the build. Usually the build step should look like:
+
+- name: Build
+  run: npm run build
+  env:
+    VITE_LASTFM_API_KEY: ${{ secrets.VITE_LASTFM_API_KEY }}
+
+If you paste your:
+
+.github/workflows/deploy.yml
+I can show you exactly where those env: lines go without changing anything else.
+
+Also, the API key appeared in your console output earlier in this chat. I would regenerate the Last.fm key before your final deployment, then put the new one in both your local .env and the GitHub secret.
+
+(base) saidorasani@Keertikas-MacBook-Pro CS409 % cd mp2
+(base) saidorasani@Keertikas-MacBook-Pro mp2 % ls
+README.md               package.json            tsconfig.json
+index.html              public                  tsconfig.node.json
+node_modules            src                     vite.config.ts
+package-lock.json       tsconfig.app.json
+(base) saidorasani@Keertikas-MacBook-Pro mp2 % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .env
+        .gitignore
+        .oxlintrc.json
+        index.html
+        package-lock.json
+        package.json
+        public/
+        src/
+        tsconfig.app.json
+        tsconfig.json
+        tsconfig.node.json
+        vite.config.ts
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) saidorasani@Keertikas-MacBook-Pro mp2 %
+…
+Good — this shows .env is currently untracked, which is what you want before adding it to .gitignore.
+
+Do these steps:
+
+Open .gitignore and add:
+.env
+For example:
+
+node_modules
+.env
+dist
+dist-ssr
+*.local
+Save .gitignore.
+
+Run:
+
+git status
+
+After that, .env should disappear from the Untracked files list.
+
+Then stage the rest:
+git add .
+
+Check again:
+git status
+
+You should see your project files staged, but not .env.
+
+Then commit:
+
+git commit -m "Complete MP2"
+
+and push:
+
+git push origin main
+
+One thing stands out: almost your whole Vite project is still untracked, so you definitely need that git add . before committing.
+
+After that, the next thing to check is your GitHub Actions workflow so the deployed site gets VITE_LASTFM_API_KEY without committing .env.
+
+do I make a chatlog file
+Yes. Since your course policy says you must submit your ChatGPT chatlogs with the source code, making a file in the repo is a sensible way to do it.
+
+The simplest option is to create something like:
+
+chatlog.txt
+or:
+
+CHATLOG.md
+in the root of your mp2 repo.
+
+For example:
+
+mp2/
+├── src/
+├── public/
+├── README.md
+├── CHATLOG.md
+├── package.json
+└── ...
+Then paste the relevant ChatGPT conversation into that file.
+
+I’d use CHATLOG.md because it is easy to read on GitHub.
+
+At the top, you can add:
+
+# ChatGPT Usage Log
+
+This file contains the ChatGPT conversation used while developing MP2.
+Then paste the conversation below it.
+
+Since your assignment says the chatlogs must be submitted along with the source code, committing that file to the repo is the safest interpretation unless the submission form gives a separate upload field.
+
+
+
+
