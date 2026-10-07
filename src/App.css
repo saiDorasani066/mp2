@@ -1,0 +1,328 @@
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background-color: var(--accent-bg);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  padding: 15px 30px;
+
+  text-decoration: none;
+  color: var(--text-h);
+  font-size: 18px;
+
+  transition: padding 0.4s;
+}
+
+nav ul li a:hover {
+  background-color: var(--accent-bg);
+  color: var(--text-hover);
+  font-size: 17px;
+}
+
+/* HOME */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-h);
+}
+.home-button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.list-button,
+.gallery-button {
+  background-color: var(--accent-bg);
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color 0.3s ease;
+}
+
+.list-button:hover,
+.gallery-button:hover {
+  background-color: white;
+  color: var(--text-h);
+}
+
+/* RESULT CARDS */
+.card {
+  background-color: var(--accent-bg);
+  padding: 20px;
+  margin: 30px;
+}
+
+.card:hover {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+}
+
+/* LIST VIEW */
+.list-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--accent-bg);
+  padding: 50px;
+  color: white;
+
+  margin-bottom: 10px;
+}
+
+.list-input label {
+  font-weight: bold;
+}
+
+.list-input input {
+  width: 250px;
+  padding: 8px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+.list-card-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--text-h);
+}
+
+.list-filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.filter-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-column select {
+  padding: 8px;
+}
+
+.list-card {
+  display: flex;
+  align-items: center;
+
+  width: 600px;
+  height: 200px;
+
+  margin: 30px auto;
+  padding: 20px;
+  gap: 25px;
+
+  background-color: var(--accent-bg);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.card-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.list-card-info {
+  flex: 1;
+  text-align: left;
+}
+
+/* GALLERY VIEW */
+
+.gallery-categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-categories button {
+  background-color: var(--accent-bg);
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color 0.3s ease;
+}
+
+.gallery-categories button:hover {
+  color: var(--text-h);
+  background-color: white;
+  cursor: pointer;
+}
+
+.gallery-view {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text-h);
+}
+
+.gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.gallery-cards .card {
+  width: 220px;
+  height: 460px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text);
+  transition: background-color 0.3s ease;
+}
+.gallery-cards .card:hover {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.gallery-cards .card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.gallery-cards a {
+  text-decoration: none;
+  color: black;
+}
+
+/* DETAIL VIEW */
+.details-view {
+  min-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  gap: 20px;
+}
+
+.details-view .card:hover {
+  background-color: var(--accent-bg);
+  border: none;
+  color: white;
+}
+.song-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.card-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.card-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.card-controls button {
+  background-color: var(--accent-bg);
+  border: 1px solid black;
+  padding: 10px 18px;
+  border-radius: 5px;
+
+  color: var(--text);
+  font-size: 16px;
+
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.card-controls button:hover {
+  background-color: white;
+  color: var(--text-h);
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.genre-block {
+  display: inline-block;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text-h);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  nav ul li a {
+    font-size: 16px;
+  }
+}

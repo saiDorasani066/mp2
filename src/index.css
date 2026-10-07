@@ -1,0 +1,29 @@
+:root {
+  --text: #ececf5;
+  --text-h: #12023c;
+  --text-hover: #e1dcdc;
+
+  --bg: #fff;
+  --accent-bg: #004cd1;
+  --border: #e5e4e7;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.page-style {
+  min-height: 90vh;
+  text-align: center;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
